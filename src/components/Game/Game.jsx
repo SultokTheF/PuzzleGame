@@ -15,7 +15,7 @@ const Game = () => {
     let won = true;
     for (let i = 0; i < shuffledArray.length - 1; i++) {
       const value = shuffledArray[i];
-      if (i == value - 1) continue;
+      if (i === value - 1) continue;
       else {
         won = false;
         break;
@@ -26,7 +26,7 @@ const Game = () => {
       setTimerActive(false);
     }
     return;
-  }, [moves]);
+  }, [moves, shuffledArray]);
 
   const newGame = () => {
     setMoves(0);
@@ -46,7 +46,7 @@ const Game = () => {
     const oldPlace = Number(document.getElementById(tile).parentElement.id.slice(6)) - 1;
     const newPlace = Number(e.target.id.slice(6)) - 1;
 
-    if (!(Math.abs(oldPlace - newPlace) == 4 || Math.abs(oldPlace - newPlace) == 1)) return;
+    if (!(Math.abs(oldPlace - newPlace) === 4 || Math.abs(oldPlace - newPlace) === 1)) return;
 
     const [i, j] = [Math.min(oldPlace, newPlace), Math.max(oldPlace, newPlace)];
     setShuffledArray([
@@ -61,7 +61,7 @@ const Game = () => {
 
   return (
     <div className="h-screen flex text-gray-300 bg-gray-950">
-      <div className="mx-auto mt-8">
+      <div className="mx-auto mt-[250px]">
         {win && (
           <div className="rounded-md border-l-4 border-green-500 bg-green-100 p-2 mb-2">
             <div className="flex items-center justify-center space-x-4">
@@ -72,7 +72,7 @@ const Game = () => {
           </div>
         )}
         <h1 className="text-3xl text-emerald-600 font-bold text-center">
-          Puzzle Game bu SultokTheF
+          Puzzle Game by SultokTheF
         </h1>
         <h3 className="text-xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
           15 Puzzle Game
@@ -85,7 +85,7 @@ const Game = () => {
         <div className="px-6 mt-4">
           <button
             onClick={newGame}
-            className="text-black font-bold block bg-gray-900 p-2 rounded w-full h-full bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%"
+            className="text-black font-bold block p-2 rounded w-full h-full bg-gray-900 animated-gradient"
           >
             New Game
           </button>

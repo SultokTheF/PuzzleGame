@@ -1,0 +1,49 @@
+.carousel .slide {
+  /* background: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel .slide img {
+  border-radius: 0.5rem;
+  padding: 10px;
+  width: 80%; /* Adjust the percentage to make the images smaller or larger */
+  height: auto;
+  object-fit: cover;
+}
+
+.carousel .control-arrow, .carousel.carousel-slider .control-arrow {
+  opacity: 0.6;
+}
+
+.carousel .control-arrow:hover {
+  opacity: 1;
+}
+
+.carousel .control-dots .dot {
+  background-color: #10b981; /* Emerald color */
+}
+
+.carousel .control-dots .dot.selected, .carousel .control-dots .dot:hover {
+  background: #2e6a56;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
+  background-size: 600% 600%;
+  animation: gradientAnimation 15s ease infinite;
+}
+

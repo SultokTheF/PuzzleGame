@@ -6,10 +6,14 @@ const Puzzle = ({ shuffledArray, dragOver, dragStart, dropped }) => {
       {shuffledArray.map((value, index) => {
         if (value === "")
           return (
-            <EmptyTile dragOver={dragOver} dropped={dropped} index={index} />
+            <div key={index}>
+              <EmptyTile dragOver={dragOver} dropped={dropped} index={index} />
+            </div>
           );
         return (
-          <FilledTile index={index} value={value} dragStart={dragStart} />
+          <div key={index}>
+            <FilledTile index={index} value={value} dragStart={dragStart} />
+          </div>
         );
       })}
     </div>
