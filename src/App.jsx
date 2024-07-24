@@ -1,13 +1,17 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { Home, Game } from './components';
+import { Home, Game, Navbar } from './components';
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Game />} />
-    </Routes>
+    <div className="bg-gray-950 text-gray-300 min-h-screen">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/game" element={<Game />} />
+      </Routes>
+    </div>
   );
 }
 
