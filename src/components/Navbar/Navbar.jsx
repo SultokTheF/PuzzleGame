@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ user, onLogout }) => {
   return (
-    <nav className="bg-gray-900 text-gray-300 p-6 shadow-lg fixed w-full top-0 z-10">
+    <nav className="bg-gray-900 text-gray-300 p-6 shadow-lg fixed w-full top-0" style={{ zIndex: 9999 }}>
       <div className="container mx-auto flex justify-between items-center">
         <Link className="text-2xl font-bold text-emerald-600 md:text-4xl" to="/">Puzzle Game</Link>
         <div className="space-x-4 text-lg md:space-x-8 md:text-xl flex-grow flex justify-center">
