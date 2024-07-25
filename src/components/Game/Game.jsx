@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import shuffleArray from "./utils/shuffleFunction";
 import Puzzle from "./Puzzle/Puzzle";
 import Timer from "./Timer/Timer";
+import MovesChart from "./MovesChart"; // Import the MovesChart component
 
 const Game = () => {
   const [shuffledArray, setShuffledArray] = useState(shuffleArray());
@@ -61,20 +62,23 @@ const Game = () => {
 
   return (
     <div className="h-screen flex text-gray-300 bg-gray-950">
-      <div className="mx-auto mt-[250px]">
+      <div className="mx-auto mt-[150px] md:mt-[250px]">
         {win && (
-          <div className="rounded-md border-l-4 border-green-500 bg-green-100 p-2 mb-2">
-            <div className="flex items-center justify-center space-x-4">
-              <p className="font-medium text-green-600">
-                This is your win
-              </p>
+          <>
+            <div className="rounded-md border-l-4 border-green-500 bg-green-100 p-2 mb-2">
+              <div className="flex items-center justify-center space-x-4">
+                <p className="font-medium text-green-600">
+                  This is your win
+                </p>
+              </div>
             </div>
-          </div>
+            <MovesChart moves={moves} />
+          </>
         )}
-        <h1 className="text-3xl text-emerald-600 font-bold text-center">
+        <h1 className="text-2xl text-emerald-600 font-bold text-center md:text-3xl">
           Puzzle Game by SultokTheF
         </h1>
-        <h3 className="text-xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+        <h3 className="text-lg font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% md:text-xl">
           15 Puzzle Game
         </h3>
         <div className="flex justify-between px-6 mt-2">
